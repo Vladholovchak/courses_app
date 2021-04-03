@@ -15,6 +15,14 @@ Style/Documentation:
 Metrics/MethodLength:
   Max: 30
 
+Metrics/BlockLength:
+  Max: 331
+
+Metrics/AbcSize:
+  Max: 23
 
 Rails/FilePath:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
   Enabled: false
