@@ -44,7 +44,8 @@
               .fa.fa-sign-out-alt
               %b Sign out
     - else
-      %ul.navbar-nav
+      %ul.navbar-nav.mr-auto
+      %ul.navbar-nav.mr-right
         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_user_registration_path)}"}
           = link_to  new_user_registration_path, class: 'nav-link' do
             .fa.fa-id-badge
@@ -53,3 +54,4 @@
           = link_to  new_user_session_path, class: 'nav-link' do
             .fa.fa-sign-in-alt
               %b Log In
+         

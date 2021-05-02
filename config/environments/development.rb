@@ -31,6 +31,16 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  ActionMailer::Base.smtp_settings = {
+      :address => 'smtp.sendgrid.net',
+      :port => '587',
+      :authentication => :plain,
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => 'heroku.com',
+      :enable_starttls_auto => true
+  }
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
