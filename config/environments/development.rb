@@ -8,6 +8,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.cache_classes = false
+  config.action_mailer.delivery_method = :test
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -30,16 +31,6 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
-  ActionMailer::Base.smtp_settings = {
-      :address => 'smtp.sendgrid.net',
-      :port => '587',
-      :authentication => :plain,
-      :user_name => ENV['SENDGRID_USERNAME'],
-      :password => ENV['SENDGRID_PASSWORD'],
-      :domain => 'heroku.com',
-      :enable_starttls_auto => true
-  }
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
